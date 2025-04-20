@@ -1,0 +1,18 @@
+version: 0.1
+
+globalTimeout: 900
+testSuiteTimeout: 600
+testSuiteStep: 300
+
+runson: win
+
+pre:
+  - dotnet restore
+  - dotnet build Orange_HR.csproj
+
+test:
+  - dotnet test Orange_HR.csproj --logger "trx;LogFileName=test_results.trx"
+
+uploadArtefacts:
+  - path: TestResults
+    name: test-results
