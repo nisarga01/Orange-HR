@@ -1,0 +1,83 @@
+{
+    "id": "66048acc-eafa-49e2-b7cf-33cb8cb1f092",
+    "created_at": "2025-04-28T02:33:31Z",
+    "update_at": "2025-04-28T02:35:13Z",
+    "global_timeout": 90,
+    "tunnel_name": "",
+    "start_time": "2025-04-28T02:34:38Z",
+    "end_time": "2025-04-28T02:35:13Z",
+    "summary": {
+        "total_time": 35000000000,
+        "execution_time": 35000000000,
+        "total_tasks": 2,
+        "build_time_consumed": 58000000000,
+        "jobTestExecutionTime": "0s",
+        "failed_tasks": 2,
+        "total_stage_info": {
+            "prerun": {
+                "StageFailedPercent": 100,
+                "StagePassPercent": 0,
+                "TotalStage": 2
+            }
+        },
+        "status": "failed",
+        "job_link": "https://hyperexecute.lambdatest.com/hyperexecute/task?jobId=66048acc-eafa-49e2-b7cf-33cb8cb1f092"
+    },
+    "tasks": [
+        {
+            "id": "9b4ba11a-a43d-45ae-abde-c55c8b384231",
+            "os": "win",
+            "status": "failed",
+            "remark": "step 4 - exit status 1",
+            "debug": false,
+            "created_at": "2025-04-28T02:34:37Z",
+            "update_at": "2025-04-28T02:35:13Z",
+            "start_time": "2025-04-28T02:34:38Z",
+            "end_time": "2025-04-28T02:35:13Z",
+            "group_number": 1,
+            "stages": [
+                {
+                    "id": "085d77f8-2523-423d-986f-c56ebb4ece6b",
+                    "type": "prerun",
+                    "status": "failed",
+                    "name": "pre",
+                    "iteration": 0,
+                    "link": "pre.log",
+                    "created_at": "2025-04-28T02:35:11Z",
+                    "started_at": "2025-04-28T02:35:12Z",
+                    "updated_at": "2025-04-28T02:35:13Z",
+                    "order": 2,
+                    "task_number": 1
+                }
+            ]
+        },
+        {
+            "id": "2163de6c-b7bb-449c-bc41-102c0c35c2cf",
+            "os": "win",
+            "status": "failed",
+            "remark": "step 4 - exit status 1",
+            "debug": false,
+            "created_at": "2025-04-28T02:34:37Z",
+            "update_at": "2025-04-28T02:35:01Z",
+            "start_time": "2025-04-28T02:34:38Z",
+            "end_time": "2025-04-28T02:35:01Z",
+            "group_number": 2,
+            "stages": [
+                {
+                    "id": "fd614349-406c-498b-af2f-14c7f6965ebc",
+                    "type": "prerun",
+                    "status": "failed",
+                    "name": "pre",
+                    "iteration": 0,
+                    "link": "pre.log",
+                    "created_at": "2025-04-28T02:35:00Z",
+                    "started_at": "2025-04-28T02:35:00Z",
+                    "updated_at": "2025-04-28T02:35:01Z",
+                    "order": 2,
+                    "task_number": 2
+                }
+            ]
+        }
+    ],
+    "test_ids": null
+}

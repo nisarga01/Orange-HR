@@ -48,11 +48,15 @@ namespace Orange_HR.Drivers
 
             // ✅ Pass options to ChromeDriver
             //_driver = new ChromeDriver(options);
-            
+
 
             // run the test in lambdatest
-            string username = "nisarga.navaneeth";
-            string accessKey = "LT_a4yax3GKkTebUODTcgmNSMNiiXcj1qH54GaI4MvlZD7fSrU";
+            //string username = "nisarga.navaneeth";
+            //string accessKey = "LT_a4yax3GKkTebUODTcgmNSMNiiXcj1qH54GaI4MvlZD7fSrU";
+
+            ////// run the test in lambdatest
+            string username = "nisargahathwar";
+            string accessKey = "LT_pl94IJaVJXc3uKiw9jGjt9bVFC88k1gK9BqHoEZSN34miem";
 
             ////Using Github actions
             //string username = Environment.GetEnvironmentVariable("LT_USERNAME");
@@ -97,9 +101,15 @@ namespace Orange_HR.Drivers
         }
         //Screenshot Helper Method
         public void CaptureScreenShot(string screenshotName)
-        {
-            ((IJavaScriptExecutor)_driver).ExecuteScript($"smartui.takeScreenshot='{screenshotName}_{DateTime.Now:yyyyMMddHHmmss}'");
-        }
+{
+    var jsExecutor = (IJavaScriptExecutor)_driver;
+
+    jsExecutor.ExecuteScript("smartui.takeScreenshot", new Dictionary<string, object>
+    {
+        { "screenshotName", screenshotName }
+    });
+}
+
         [TearDown]
         public void Cleanup()
         {

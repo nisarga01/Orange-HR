@@ -1,0 +1,171 @@
+accessibilityJob: false
+alwaysRunPostSteps: false
+appium: null
+autosplit: true
+betaFeature:
+    setPartiallyCompletedAsCompleted: false
+captureScreenRecordingForScenarios: false
+codeDirectory: Orange HR
+collectLocalGitData: true
+combineTasksInMatrixMode: false
+concurrency: 2
+cypress: false
+differentialUpload:
+    enabled: false
+    forcedDisabled: false
+    ttlHours: null
+dynamicAllocation: false
+env:
+    NUGET_HTTP_CACHE_PATH: C:\nuget_http_cache
+    NUGET_PACKAGES: C:\nuget_global_cache
+    NUGET_PLUGINS_CACHE_PATH: C:\nuget_plugins_cache
+errorCategorizedOnFailureOnly: false
+framework:
+    additional_args: null
+    args:
+        appId: ""
+        appPath: ""
+        artifacts: false
+        avoidAppLaunch: false
+        customData: {}
+        deviceSelectionStrategy: ""
+        devices: []
+        disableReleaseDevice: false
+        filters:
+            attributes: []
+        fixedIP: ""
+        isRealMobile: null
+        isVirtualDevice: false
+        language: ""
+        locale: ""
+        minorOsVersion: false
+        mitmProxy: false
+        mobileDC: null
+        networkHar: false
+        otherApps: []
+        platformName: ""
+        playwrightRD: false
+        preservedDevice: false
+        queueTimeout: 0
+        resignApp: true
+        shards:
+            mappings: []
+        skipInstall: false
+        skipUninstallPreviousBuild: false
+        skipXMLOnRun: false
+        smartUI: null
+        testSuiteAppId: ""
+        testSuitePath: ""
+        uninstallPreviousBuild: false
+        xcTestPlanId: ""
+        xcTestPlanPath: ""
+    baseCommand: ""
+    defaultReports: false
+    discoveryFlags: []
+    discoveryMode: ""
+    discoveryType: ""
+    downloadURL: ""
+    flags: []
+    isTestNGXMLSuite: false
+    licenseKey: ""
+    name: ""
+    runnerFlags: []
+    toscaArgs: null
+    userdefinediscovery: false
+    version: ""
+    workingDirectory: ""
+globalPost:
+    commands: []
+    completed: false
+    mode: ""
+    runson: ""
+    shell: ""
+    workingDirectory: ""
+globalPre:
+    cache: false
+    commands: []
+    completed: false
+    location: ""
+    maxRetries: 0
+    mode: ""
+    runson: ""
+    shell: ""
+    type: ""
+    workingDirectory: ""
+    yamlPath: null
+jobID: 66048acc-eafa-49e2-b7cf-33cb8cb1f092
+jobLabel:
+    - selenium-Nunit
+    - win
+    - autosplit
+key: LT_a4yax3GKkTebUODTcgmNSMNiiXcj1qH54GaI4MvlZD7fSrU
+localHTTPProxy: ""
+maxRetries: 1
+maxRetriesPreSteps: 0
+meta: {}
+platformConfig: null
+postDirectives:
+    commands: []
+    shell: ""
+    workingDirectory: ""
+pre:
+    - echo "Current Directory:"
+    - dir
+    - echo "Restoring..."
+    - dotnet restore "\"D:\\Automation\\orange\\Orange HR\\Orange HR.sln\""
+    - echo "Clearing nuget cache..."
+    - nuget locals all -clear
+    - echo "Building..."
+    - dotnet build "\"D:\\Automation\\orange\\Orange HR\\Orange HR.csproj\"" -c Release
+preDirectives:
+    commands:
+        - echo "Current Directory:"
+        - dir
+        - echo "Restoring..."
+        - dotnet restore "\"D:\\Automation\\orange\\Orange HR\\Orange HR.sln\""
+        - echo "Clearing nuget cache..."
+        - nuget locals all -clear
+        - echo "Building..."
+        - dotnet build "\"D:\\Automation\\orange\\Orange HR\\Orange HR.csproj\"" -c Release
+    maxRetries: 0
+    shell: ""
+    workingDirectory: ""
+project:
+    id: ""
+    name: ""
+    type: custom
+projectpath: ""
+regionConfig:
+    storage:
+        enabled: false
+        name: ""
+        platform: azure
+        region: ""
+    vm: []
+retryOnFailure: true
+runson: win
+runtime:
+    language: dotnet
+    version: "8.0"
+    addons: []
+    opts: {}
+slackChannel: ""
+sourcePayload:
+    verifySSL: true
+storageType: ""
+testDiscovery:
+    autosubset: true
+    command: grep 'Category' . -ir --include=*.cs --exclude=DriverFactory.cs --exclude=HyperTestDemo.AssemblyInfo.cs | awk '{print$2}' | grep -o '".*"'
+    mode: dynamic
+    type: raw
+testDiscoveryResultV3: []
+testRunnerCommand: dotnet test "D:\Automation\orange\Orange HR\Orange HR.sln" --filter TestCategory=$test
+testSuites: []
+triggerMode: false
+tunnelOpts:
+    testsPerTunnel: 10
+unzipPayload: false
+user: nisarga.navaneeth
+version: "0.1"
+waitForArtefactsUpload: false
+whiteLabelProductTag: ""

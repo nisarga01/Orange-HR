@@ -32,6 +32,7 @@ namespace Orange_HR.Tests
             ad.AdminInDashboard();
 
             Thread.Sleep(6000);
+            CaptureScreenShot("Add-NewAdminDashboard");
         }
         [Test]
         public void AddNewAdmin()
@@ -49,12 +50,13 @@ namespace Orange_HR.Tests
             WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
             wait.Until(driver => driver.Url.Contains("dashboard"));
             // Navigate to Admin page
-            _driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
+            ///_driver.Navigate().GoToUrl("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 
             ad.AdminInDashboard();
             ad.AddAdmin();
-
             Thread.Sleep(6000);
+            //call the smartuiscreenshot class from the driver class
+            CaptureScreenShot("Add-NewAdmin");
         }
     }
 }

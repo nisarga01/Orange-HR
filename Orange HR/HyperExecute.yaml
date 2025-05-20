@@ -1,0 +1,37 @@
+﻿---
+version: 0.1
+runson: win
+
+autosplit: true
+concurrency: 2
+
+runtime:
+  language: dotnet
+  version: "8.0"
+
+env:
+  NUGET_PACKAGES: 'C:\nuget_global_cache'
+  NUGET_HTTP_CACHE_PATH: 'C:\nuget_http_cache'
+  NUGET_PLUGINS_CACHE_PATH: 'C:\nuget_plugins_cache'
+
+pre:
+  - echo "Current Directory:"
+  - dir
+  - echo "Restoring..."
+  - dotnet restore "\"D:\\Automation\\orange\\Orange HR\\Orange HR.sln\""
+  - echo "Clearing nuget cache..."
+  - nuget locals all -clear
+  - echo "Building..."
+  - dotnet build "\"D:\\Automation\\orange\\Orange HR\\Orange HR.csproj\"" -c Release
+
+testDiscovery:
+  type: raw
+  mode: dynamic
+  command: grep 'Category' . -ir --include=*.cs --exclude=DriverFactory.cs --exclude=HyperTestDemo.AssemblyInfo.cs | awk '{print$2}' | grep -o '".*"'
+
+testRunnerCommand: dotnet test "D:\Automation\orange\Orange HR\Orange HR.sln" --filter TestCategory=$test
+
+retryOnFailure: true
+maxRetries: 1
+
+jobLabel: [selenium-Nunit, win, autosplit]
